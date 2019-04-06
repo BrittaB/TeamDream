@@ -1,7 +1,14 @@
-body{
-    background: rgb(96,125,139);
-background: radial-gradient(circle, rgba(96,125,139,1) 0%, rgba(24,69,85,1) 95%);
+body {
+   
+    /* background: rgb(96,125,139);
+    background: radial-gradient(circle, rgba(96,125,139,1) 0%, rgba(24,69,85,1) 95%);  */
+    background-image: url("/assets/images/background.jpg");
+    background-repeat: no-repeat;
 };
-#searchH{
-    @extend .blue, .lighten-4;
-};
+
+.pagefooter {
+    flex: 1 0 auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
