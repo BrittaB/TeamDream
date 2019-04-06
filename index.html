@@ -1,42 +1,85 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--favicon-->
-    <link rel="icon" href="/assets/images/favicon.jpg" sizes="16x16" type="image/jpeg">
 
-    <!-- Materialized CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--favicon-->
+  <link rel="icon" href="/assets/images/favicon.jpg" sizes="16x16" type="image/jpeg">
 
-    <title>TeamDream</title>
-  </head>
-  <body>
-  <!--search bar-->
-    <nav>
-        <div class="nav-wrapper">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons"></i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
+  <!-- Materialized CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <title>TeamDream</title>
+</head>
+
+<body>
+  <!--searchbar/Nav Logo-->
+  <nav>
+    <div class="nav-wrapper #607d8b blue-grey z-depth-1">
+      <form>
+        <a href="#" class="brand-logo right">Team Dream</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <!--Links if we want them-->
+          <li><a href="sass.html">Home</a></li>
+          <li><a href="badges.html"></a></li>
+          <li><a href="collapsible.html"></a></li>
+        </ul>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons"></i></label>
+          <i class="material-icons">close</i>
         </div>
-      </nav>
+      </form>
+    </div>
+  </nav>
+  <!--container-->
+  <div class="container centered">
+    <!--Table-->
+    <div class="row centered #cfd8dc blue-grey lighten-4 z-depth-5">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+        </tr>
+      </thead>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="assets/java/react.js"></script> 
-    <script src="assets/java/schedule.js"></script> 
-    <script src="assets/java/weather.js"></script> 
-    
-  </body>
+      <tbody>
+        <tr>
+          <td>Alvin</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+        </tr>
+        <tr>
+          <td>Alan</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+        </tr>
+        <tr>
+          <td>Jonathan</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="assets/java/react.js"></script>
+  <script src="assets/java/schedule.js"></script>
+  <script src="assets/java/weather.js"></script>
+
+</body>
+
 </html>
