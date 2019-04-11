@@ -2,7 +2,7 @@ body {
    
     /* background: rgb(96,125,139);
     background: radial-gradient(circle, rgba(96,125,139,1) 0%, rgba(24,69,85,1) 95%);  */
-    background-image: url("/assets/images/background.jpg");
+    background-image: url("assets/images/background.jpg");
     background-repeat: no-repeat;
 };
 
