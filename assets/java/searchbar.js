@@ -1,6 +1,6 @@
 $(document).ready(function ()
 {
-   var teamlist = ["Arizona Diamondbacks", "Atlanta Braves", "Baltimore Orioles", "Boston Red Sox",
+   var teamlist = ["Arizona-Diamondbacks", "Atlanta Braves", "Baltimore Orioles", "Boston Red Sox",
        "Chicago White Sox",
        "Chicago Cubs", "Cincinnati Reds", "Cleveland Indians", "Colorado Rockies",
        "Detroit Tigers", "Houston Astros", "Kansas City Royals",
