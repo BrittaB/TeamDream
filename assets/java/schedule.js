@@ -2,7 +2,7 @@
 $("#search").on("change", function (event) {
     event.preventDefault();
 
-    var teamSelected = "KansasCity-Royals";
+    var teamSelected = $("#search").val().trim();
     var apiKey = '57ba7705-1adc-4f64-8748-e619a5';
     var password = 'Hergins1';
     var games;
@@ -41,6 +41,7 @@ $("#search").on("change", function (event) {
             });
 
             Promise.all(weatherReqs).then(function (weather) {
+                console.log(weather);
                 // each index is mapped to the same index as the games array
                 // games[0] -> weather[0]
 
