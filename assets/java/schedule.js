@@ -36,11 +36,10 @@ $("#search").on("change", function (event) {
                 for (var i = 0; i < games.length; i++) {
                     var homeTeam = games[i].homeTeam.Name;
                     var awayTeam = games[i].awayTeam.Name;
-                    // var temp = weather[i].list.main.temp;
+                    var temp = weather[i].list.main.temp;
                     var date = games[i].date;
                     location = games[i].homeTeam.City
-                    // console.log(temp);
-                    
+                                        
                     var newRow = $("<tr>").append(
                         $("<td>").text(homeTeam),
                         $("<td>").text(awayTeam),
