@@ -1,10 +1,10 @@
 $("#search").on("change", function (event) {
     event.preventDefault();
 
-    var teamSelected = "KansasCity-Royals";
+    var teamSelected = $("#search").val().trim();
     var apiKey = '57ba7705-1adc-4f64-8748-e619a5';
     var password = 'Hergins1';
-    var queryURL = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2019-regular/full_game_schedule.json?date=until-5-days-from-now&team=" + teamSelected;
+    var queryURL = "https://api.mysportsfeeds.com/v1.2/pull/mlb/2019-regular/full_game_schedule.json?date=from-today-to-5-days-from-now&team=" + teamSelected;
 
     $.ajax({
         url: queryURL,
@@ -14,23 +14,14 @@ $("#search").on("change", function (event) {
         },
     })
         .then(function (response) {
-            console.log(response);
             var games = response.fullgameschedule.gameentry;
-            console.log(games);
-            // var queryURL = "api.openweathermap.org/data/2.5/forecast?q={city name},us&appid57742b48d96448fdbe3c30d3f4a55702";
-            // for (var i = 0; i < games.length; i++) {
-            //     var date = games.gameentry.date;
-            //     var awayTeam = results.gameentry.awayTeam.Name;
-            //     var homeTeam = results.gameentry.homeTeam.Name;
-            //     var location = results.gameentry.homeTeam.City;
+            var location;
 
             var weatherReqs = games.map(function (game) {
-                console.log(game);
-                var awayTeam = game.awayTeam.Name;
-                var homeTeam = game.homeTeam.Name;
-                var location = game.homeTeam.City;
-                var date = game.date;
-                var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + ",us&appid=57742b48d96448fdbe3c30d3f4a55702";
+
+                location = game.homeTeam.City;
+
+                var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + ",us&units=imperial&appid=57742b48d96448fdbe3c30d3f4a55702&cnt=5";
 
                 return $.ajax({
                     url: queryURL,
@@ -39,23 +30,26 @@ $("#search").on("change", function (event) {
             });
 
             Promise.all(weatherReqs).then(function (weather) {
+                console.log(weather);
                 // each index is mapped to the same index as the games array
                 // games[0] -> weather[0]
-                // for (var i = 0; i < games.length; i++) {
-                //     var date = games.gameentry.date;
-                //     var awayTeam = results.gameentry.awayTeam.Name;
-                //     var homeTeam = results.gameentry.homeTeam.Name;
-                //     var location = results.gameentry.homeTeam.City;
-
-                //     var newRow = $("<tr>").append(
-                //         $("<td>").text(awayTeam),
-                //         $("<td>").text(homeTeam),
-                //         $("<td>").text(location),
-                //         $("#tableID > tbody").append(newRow)
-                // );
-                console.log(weather);
-
-            });
-        })
-}
-);
+                for (var i = 0; i < games.length; i++) {
+                    var homeTeam = games[i].homeTeam.Name;
+                    var awayTeam = games[i].awayTeam.Name;
+                    // var temp = weather[i].list.main.temp;
+                    var date = games[i].date;
+                    location = games[i].homeTeam.City
+                    // console.log(temp);
+                    
+                    var newRow = $("<tr>").append(
+                        $("<td>").text(homeTeam),
+                        $("<td>").text(awayTeam),
+                        $("<td>").text(location),
+                        $("<td>").text(date),
+                        // $("<td>").text(temp),
+                        );
+                    $("#tableID > tbody").append(newRow)
+                }
+            })
+        });
+})        
