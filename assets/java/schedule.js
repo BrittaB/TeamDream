@@ -1,5 +1,6 @@
 $("#search").on("change", function (event) {
     event.preventDefault();
+    $("#tableID tbody").remove();
 
     var teamSelected = $("#search").val().trim();
     var apiKey = '57ba7705-1adc-4f64-8748-e619a5';
@@ -33,22 +34,24 @@ $("#search").on("change", function (event) {
                 console.log(weather);
                 // each index is mapped to the same index as the games array
                 // games[0] -> weather[0]
-                for (var i = 0; i < games.length; i++) {
+                for (var i = 0; i < weather.length; i++) {
                     var homeTeam = games[i].homeTeam.Name;
                     var awayTeam = games[i].awayTeam.Name;
-                    var temp = weather[i].list.main.temp;
+                    var temp = weather[i].list[4].weather[0].description;
                     var date = games[i].date;
                     location = games[i].homeTeam.City
-                                        
+
+                    var newBody = $("<tbody>")
+
                     var newRow = $("<tr>").append(
                         $("<td>").text(homeTeam),
                         $("<td>").text(awayTeam),
                         $("<td>").text(location),
                         $("<td>").text(date),
-                        // $("<td>").text(temp),
+                        $("<td>").text(temp),
                         );
-                    $("#tableID > tbody").append(newRow)
+                    $("#tableID").append(newBody).append(newRow)
                 }
             })
         });
-})        
+})
