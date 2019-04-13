@@ -12,7 +12,7 @@ $(document).ready(function ()
        "Toronto Blue Jays", "Washington Nationals"
    ];
 
-   $("#teamsearch").select2({
+   $("#search").select2({
        data: teamlist
    });
 });
